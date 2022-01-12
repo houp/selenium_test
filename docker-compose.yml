@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+
+  flask:
+    build: ./
+    container_name: salary-data-flask
+    volumes:
+    - ./:/app/
+    ports:
+      - 5000:5000
+
+
+
+
+
+
