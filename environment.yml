@@ -28,4 +28,6 @@ dependencies:
   - pip:
       - selenium==4.1.0
       - webdriver-manager==3.5.2
+      - chromedriver-binary-auto==0.1.1
+      - chromedriver-binary==98.0.4758.48.0
 

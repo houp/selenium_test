@@ -6,7 +6,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 
 def parse():
-    driver = webdriver.Chrome('./chromedriver.exe')
+    driver = webdriver.Chrome(r'./chromedriver')
     driver.get("https://nofluffjobs.com/pl/job/remote-devops-engineer-shiji-poland-lo2gjfh8")
     button = driver.find_element(By.CLASS_NAME, "btn-accept-cookie")
     webdriver.ActionChains(driver).click(button).perform()
@@ -14,7 +14,4 @@ def parse():
     job_description = driver.find_element(By.TAG_NAME, "common-posting-description")
     print(job_description.text)
     driver.close()
-
-
-
 
