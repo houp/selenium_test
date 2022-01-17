@@ -6,11 +6,14 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 
 def parse():
-    driver = webdriver.Chrome(r'./chromedriver')
+    options = webdriver.ChromeOptions()
+    options.headless = True
+    options.add_argument("--no-sandbox")
+    driver = webdriver.Chrome(options=options)
     driver.get("https://nofluffjobs.com/pl/job/remote-devops-engineer-shiji-poland-lo2gjfh8")
     button = driver.find_element(By.CLASS_NAME, "btn-accept-cookie")
     webdriver.ActionChains(driver).click(button).perform()
-    driver.maximize_window()
+    #driver.maximize_window()
     job_description = driver.find_element(By.TAG_NAME, "common-posting-description")
     print(job_description.text)
     driver.close()
